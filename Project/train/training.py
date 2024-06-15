@@ -12,10 +12,6 @@ def peak_signal_noise_ratio(y_true, y_pred):
     return tf.image.psnr(y_pred, y_true, max_val=255.0)
 
 
-
-
-
-
 def train_model(train_low_light_images, train_enhanced_images, val_low_light_images, val_enhanced_images, image_size, batch_size, epochs, model_save_path):
     train_dataset = get_dataset(train_low_light_images, train_enhanced_images)
     val_dataset = get_dataset(val_low_light_images, val_enhanced_images)
@@ -45,5 +41,5 @@ def train_model(train_low_light_images, train_enhanced_images, val_low_light_ima
     )
     
 
-    # model.save(model_save_path, save_format='h5')
+    
     return history, model

@@ -12,7 +12,7 @@ import tensorflow as tf
 IMAGE_SIZE = 128
 BATCH_SIZE = 4
 MAX_TRAIN_IMAGES = 300
-EPOCHS = 1
+EPOCHS = 50
 MODEL_SAVE_PATH = "mirnet_model.h5"
 
 random.seed(10)
@@ -52,8 +52,6 @@ def plot_history(history, value, name):
 plot_history(history, "loss", "Loss")
 plot_history(history, "peak_signal_noise_ratio", "PSNR")
 
-# Load the trained model with custom objects
-# model = tf.keras.models.load_model(MODEL_SAVE_PATH, custom_objects={'charbonnier_loss': charbonnier_loss, 'peak_signal_noise_ratio': peak_signal_noise_ratio})
 
 # Infer and save results
 infer_and_save(model, test_low_light_images, "./test/predicted")

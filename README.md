@@ -5,14 +5,22 @@ With the goal of recovering high-quality image content from its degraded version
 
 ## Table of Contents 💡
 - **Introduction**
+- **PSNR value Achieved**
 - **Pipeline**
 - **How to install?**
 - **More Knowledge**
 ## Introduction 🍁
 This repository implements the MIRNet model for enhancing low-light images. MIRNet, which stands for Multi-Scale Residual Attention Network, is a powerful neural network designed to improve the visibility and quality of images captured in poor lighting conditions. This implementation includes training on the LOL dataset and testing on a custom test set to demonstrate the model's effectiveness.
+## PSNR value
+Peak Signal-to-Noise Ratio (PSNR) is a metric used to evaluate the quality of reconstructed or restored images, comparing them to the original images. It is widely used in image processing tasks such as image compression, denoising, and restoration. PSNR measures the ratio between the maximum possible power of a signal (image data) and the power of the corrupting noise that affects the fidelity of its representation. Higher PSNR values indicate better quality of the restored image, meaning it is closer to the original.
 
+I am very glad to mention that in my MirNet Model Implementation i achieved PSNR value of:
+### 1)At training data: 67.1063
+### 2)At validation data: 67.2350
+For further knowledge you can view the graph plotted for psnr vs epochs at
+: https://drive.google.com/file/d/1njtcuIq4T7L-6FEPvJlMt08ys4sMvt40/view?usp=sharing
 ## Pipeline ❄️
-1. Data Preparation
+### 1. Data Preparation
 - **Training Data**: Images are sourced from the LOL dataset, specifically the `our485` directory.
 - **Testing Data**: Images are sourced from the `data/test` directory.
 - **Preprocessing**: Images are read and normalized to a [0, 1] range, followed by random cropping to a fixed size of 128x128 pixels.
